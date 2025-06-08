@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webai Logo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font to the body and set a light background */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background for contrast */
+            display: flex;
+            flex-direction: column; /* Arrange items vertically */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure it takes full viewport height */
+            margin: 0;
+            padding: 1rem; /* Add some padding for smaller screens */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Container for the entire logo (icon + text + slogan) */
+        .logo-container {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6); /* Soft gradient background for depth */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+            border-radius: 20px; /* Rounded corners for a modern look */
+            padding: 2.5rem 3.5rem; /* Generous padding around the logo elements */
+            display: flex;
+            flex-direction: column; /* Stack logo block and slogan vertically */
+            align-items: center; /* Center items horizontally within the column */
+            gap: 1rem; /* Space between logo block and slogan */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effects */
+            width: 28%;
+            height: 50%; /* Ensure responsiveness on smaller screens */
+            text-align: center; /* Center text within the container */
+        }
+
+        /* Hover effect for the logo container */
+        .logo-container:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+        }
+
+        /* New container for the logo icon and text, to keep them side-by-side */
+        .logo-block {
+            display: flex;
+            align-items: center; /* Vertically align icon and text */
+            gap: 1rem; /* Space between the icon and the text */
+            flex-wrap: wrap; /* Allow wrapping on very small screens */
+            justify-content: center; /* Center items when wrapped */
+        }
+
+        /* Styling for the logo icon wrapper */
+        .logo-icon {
+            width: 64px; /* Fixed width for the SVG icon */
+            height: 64px; /* Fixed height for the SVG icon */
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+
+        /* Styling for the logo text "Webai" */
+        .logo-text {
+            font-size: 3.5rem; /* Large font size for prominence */
+            font-weight: 700; /* Bold font weight */
+            line-height: 1; /* Compact line height */
+            /* Apply a vibrant gradient to the text */
+            background: linear-gradient(45deg, #4F46E5, #8B5CF6, #EC4899); /* Blue, Purple, Pink gradient */
+            -webkit-background-clip: text; /* Clip background to text shape for Webkit browsers */
+            -webkit-text-fill-color: transparent; /* Make text transparent to show background */
+            background-clip: text; /* Standard property for clipping background to text */
+            color: transparent; /* Fallback for non-webkit browsers (though gradient will be visible) */
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        /* Ensure SVG fills its container */
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Apply the gradient fill to specific SVG elements */
+        .icon-gradient-fill {
+            fill: url(#iconGradient); /* Reference the linear gradient defined in SVG defs */
+        }
+
+        /* Styles for the slogan text */
+        .slogan-display {
+            font-size: 1.7rem;
+            font-weight: 500;
+            color: #555 bold; /* Slightly darker color for readability */
+            margin-top: 0.3rem; /* Space between logo text and slogan */
+            padding: 0rem; /* Add horizontal padding for smaller screens */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 640px) {
+            .logo-container {
+                padding: 1.5rem 2rem; /* Reduce padding */
+                gap: 0.75rem; /* Reduce gap */
+            }
+            .logo-icon {
+                width: 48px; /* Smaller icon on small screens */
+                height: 48px;
+            }
+            .logo-text {
+                font-size: 2.5rem; /* Smaller text on small screens */
+            }
+            .slogan-display {
+                font-size: 1rem; /* Smaller slogan text */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container {
+                padding: 1.5rem;
+            }
+            .logo-block {
+                flex-direction: column; /* Stack icon and text vertically */
+                gap: 0.75rem;
+            }
+            .logo-text {
+                font-size: 2rem; /* Even smaller text */
+                white-space: normal; /* Allow text to wrap if necessary */
+            }
+            .slogan-display {
+                font-size: 1rem; /* Even smaller slogan text */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <div class="logo-block">
+            <div class="logo-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />   <stop offset="50%" style="stop-color:#8B5CF6;stop-opacity:1" />  <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" /> </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="30" class="icon-gradient-fill"/>
+                    <line x1="50" y1="50" x2="75" y2="25" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+                    <line x1="50" y1="50" x2="25" y2="25" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+                    <line x1="50" y1="50" x2="75" y2="75" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+                    <line x1="50" y1="50" x2="25" y2="75" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+                    <circle cx="75" cy="25" r="4" fill="white" opacity="0.9"/>
+                    <circle cx="25" cy="25" r="4" fill="white" opacity="0.9"/>
+                    <circle cx="75" cy="75" r="4" fill="white" opacity="0.9"/>
+                    <circle cx="25" cy="75" r="4" fill="white" opacity="0.9"/>
+                </svg>
+            </div>
+            <div class="logo-text">Webai</div>
+        </div>
+        <div id="sloganDisplay" class="slogan-display">Your Idea, Our Code</div>
+    </div>
+</body>
+</html>
